@@ -1047,41 +1047,109 @@ img {
 
   /* Footer */
   .footer-container {
+    display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    text-align: center;
     align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
+  /* Footer Sections */
   .footer-brand,
   .footer-links,
   .footer-contact {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
 
+  /* Footer Brand */
+  .footer-brand h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 auto;
+    max-width: 480px;
+  }
+
+  /* Footer Logo */
+  .footer-logo {
+    max-width: 70px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  /* Footer Links */
   .footer-links ul {
+    list-style: none;
     padding: 0;
+    margin: 0 auto;
   }
 
-  .social-icons {
-    justify-content: center;
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    color: #ccc;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  /* Footer Contact */
+  .footer-contact p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .footer-contact strong {
+    display: block;
     margin-top: 1rem;
-    gap: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Social Icons */
+  .social-icons {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.2rem;
   }
 
   .social-icons a {
-    font-size: 1.3rem;
-    margin: 0;
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
     background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .social-icons a:hover {
