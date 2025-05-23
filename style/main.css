@@ -170,10 +170,11 @@ img {
 }
 
 .hero-text p {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
   color: #f1f1f1;
-  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 520px;
+  text-align: justify; /* ✅ Tambahan untuk rata kanan-kiri */
 }
 
 .hero-buttons {
@@ -595,25 +596,32 @@ img {
 .footer {
   background: var(--dark);
   color: white;
-  padding: 60px 20px 30px;
+  padding: 80px 20px 40px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   z-index: 1;
 }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: space-between;
-  align-items: flex-start;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 3rem;
+  padding: 0 2rem;
 }
 
+/* === Footer Columns === */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* === Brand === */
 .footer-logo {
-  width: 60px;
-  margin-bottom: 0.8rem;
+  width: 65px;
+  margin-bottom: 0.6rem;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: brightness(1.1);
 }
@@ -623,37 +631,42 @@ img {
   filter: brightness(1.3);
 }
 
+.footer-brand {
+  text-align: left;
+}
+
 .footer-brand h3 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+  font-size: 1.7rem;
   font-weight: 700;
+  margin: 0;
   color: #fff;
 }
 
 .footer-brand p {
-  margin-bottom: 1rem;
+  font-size: 1rem;
   color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  max-width: 460px;
 }
 
+/* === Sosial Media === */
 .social-icons {
-  margin-top: 1rem;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.3rem;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -662,9 +675,23 @@ img {
   color: var(--dark);
 }
 
+/* === Links === */
+.footer-links {
+  text-align: center;
+  justify-self: center;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+}
+
 .footer-links ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -673,9 +700,9 @@ img {
 }
 
 .footer-links a {
-  text-decoration: none;
   color: #ccc;
   font-size: 0.95rem;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -683,30 +710,56 @@ img {
   color: white;
 }
 
-.footer-contact p {
-  max-width: 320px;
-  word-break: break-word;
+/* === Contact === */
+.footer-contact {
+  text-align: right;
+  justify-self: end;
+}
+
+.footer-contact ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-contact li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  color: #ccc;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin: 0 auto 0.8rem auto;
-  text-align: left;
+  word-break: break-word;
 }
 
+.footer-contact i {
+  color: var(--accent);
+  font-size: 1rem;
+}
 
-.footer-contact strong {
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
   color: white;
-  font-weight: 600;
 }
 
+/* === Copyright === */
 .footer-copy {
   text-align: center;
-  font-size: 0.85rem;
-  margin-top: 2.5rem;
-  color: #999;
+  font-size: 0.9rem;
+  color: #aaa;
+  padding-top: 2rem;
+  margin-top: 3rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
 }
 
-/* Optional: Fade-in animation */
+/* Fade-in Animation */
 .fade-in {
   animation: fadeInUp 1s ease-in-out both;
 }
@@ -1045,117 +1098,138 @@ img {
     padding: 0 1rem;
   }
 
-  /* Footer */
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2.5rem;
-    padding: 2rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+/* Footer (Final Structure) */
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+  padding: 2rem 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
-  /* Footer Sections */
-  .footer-brand,
-  .footer-links,
-  .footer-contact {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
+.footer-col {
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
-  /* Footer Brand */
-  .footer-brand h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
+/* Rata tengah brand dan konten lainnya */
+.footer-brand {
+  text-align: center;
+}
 
-  .footer-brand p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ccc;
-    margin: 0 auto;
-    max-width: 480px;
-  }
+.footer-logo {
+  max-width: 80px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
 
-  /* Footer Logo */
-  .footer-logo {
-    max-width: 70px;
-    height: auto;
-    margin: 0 auto 1rem;
-    display: block;
-  }
+.footer-brand h3 {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: center; /* pastikan h3 juga rata tengah */
+}
 
-  /* Footer Links */
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-  }
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0 auto;
+  max-width: 480px;
+  text-align: center;
+}
 
-  .footer-links li {
-    margin-bottom: 0.5rem;
-  }
+/* Heading Section */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.05rem;
+  color: var(--yellow);
+  margin-bottom: 0.8rem;
+  text-align: center; /* fix untuk pastikan <h4> rata tengah */
+}
 
-  .footer-links a {
-    display: inline-block;
-    color: #ccc;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+/* UL container */
+.footer-links ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
 
-  .footer-links a:hover {
-    color: white;
-  }
+/* Items */
+.footer-links li,
+.footer-contact li {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  line-height: 1.6;
+  text-align: center;
+}
 
-  /* Footer Contact */
-  .footer-contact p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0.6rem;
-    word-break: break-word;
-    text-align: center;
-  }
+/* Alamat baris terakhir block */
+.footer-contact li:last-child {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
 
-  .footer-contact strong {
-    display: block;
-    margin-top: 1rem;
-    color: white;
-    font-weight: 600;
-  }
+/* Anchor */
+.footer-links a,
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  /* Social Icons */
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.2rem;
-  }
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: white;
+}
 
-  .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+/* Icon di kontak */
+.footer-contact i {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-right: 0.3rem;
+}
 
-  .social-icons a:hover {
-    background-color: var(--accent);
-    color: var(--dark);
-  }
+/* Social Media */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--accent);
+  color: var(--dark);
+}
 
   /* Responsive Footer Logo */
   .footer-logo {
