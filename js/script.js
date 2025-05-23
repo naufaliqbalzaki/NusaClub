@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeInAnimation();
   initCounterAnimation();
   initMobileNavToggle();
-  initGallerySlider(); // Tambahkan fungsi untuk slider galeri
+  initTestimoniModal(); // Menambahkan fungsi testimoni modal
+  initAddTestimoni();   // Menambahkan fungsi untuk menambah testimoni
 });
 
 /* === 1. Toggle FAQ (Accordion Style) === */
@@ -105,23 +106,88 @@ function initMobileNavToggle() {
   });
 }
 
-/* === 5. Galeri Foto Geser Kiri dan Kanan === */
-let currentIndex = 0;
+/* === 5. Testimoni Modal === */
+function initTestimoniModal() {
+  const addTestimoniBtn = document.getElementById('addTestimoniBtn');
+  const modal = document.getElementById('testimoniModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
 
-function initGallerySlider() {
-  const leftButton = document.querySelector('.left-btn');
-  const rightButton = document.querySelector('.right-btn');
-  const slides = document.querySelectorAll('.galeri-card');
-  const totalSlides = slides.length;
+  if (!addTestimoniBtn || !modal || !closeModalBtn) return;
 
-  leftButton?.addEventListener('click', () => moveSlide(-1, slides, totalSlides));
-  rightButton?.addEventListener('click', () => moveSlide(1, slides, totalSlides));
+  // Show the modal when "Tambah Testimoni" button is clicked
+  addTestimoniBtn.addEventListener('click', () => {
+    modal.style.display = "block";
+  });
+
+  // Close the modal when close button is clicked
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  // Close the modal when clicking outside the modal
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 }
 
-function moveSlide(direction, slides, totalSlides) {
-  const galeriGrid = document.querySelector('.galeri-grid');
-  currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+/* === 6. Add Testimoni to Section === */
+function initAddTestimoni() {
+  const testimoniForm = document.getElementById('testimoniForm');
+  const testimoniCards = document.querySelector('.testimoni-cards');
+  const stars = document.querySelectorAll('.rating .star');
+  let selectedRating = 0; // variable to hold the rating value
 
-  const newTransformValue = -currentIndex * 270; // 250px for each card plus gap
-  galeriGrid.style.transform = `translateX(${newTransformValue}px)`;
+  if (!testimoniForm || !testimoniCards) return;
+
+  // Add click event for stars to capture the rating
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.getAttribute('data-value'));
+      stars.forEach(star => {
+        star.classList.remove('active'); // remove active class from all stars
+      });
+      // Add active class to the clicked star and previous stars
+      for (let i = 0; i < selectedRating; i++) {
+        stars[i].classList.add('active');
+      }
+    });
+  });
+
+  // Submit the form to add new testimoni
+  testimoniForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const testimoniText = document.getElementById('testimoniText').value;
+
+    // Create a new testimoni card
+    const newTestimoniCard = document.createElement('div');
+    newTestimoniCard.classList.add('testimoni-card');
+    
+    // Rating stars to display
+    let ratingStars = '';
+    for (let i = 0; i < selectedRating; i++) {
+      ratingStars += '★'; // full stars for rating
+    }
+    for (let i = selectedRating; i < 5; i++) {
+      ratingStars += '☆'; // empty stars for remaining rating
+    }
+
+    newTestimoniCard.innerHTML = `
+      <p class="testimoni-text">"${testimoniText}"</p>
+      <p class="testimoni-author">- ${name}</p>
+      <p class="testimoni-rating">Rating: ${ratingStars}</p>
+    `;
+
+    // Append the new testimoni card to the container
+    testimoniCards.appendChild(newTestimoniCard);
+
+    // Close the modal and reset the form
+    document.getElementById('testimoniModal').style.display = "none";
+    testimoniForm.reset();
+    stars.forEach(star => star.classList.remove('active')); // Reset stars after submission
+    selectedRating = 0; // Reset selected rating
+  });
 }

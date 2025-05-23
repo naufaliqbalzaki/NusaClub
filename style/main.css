@@ -624,6 +624,122 @@ img {
   transform: translateY(-2px);
 }
 
+/* ===== Testimoni Section ===== */
+.testimoni-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimoni-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.testimoni-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimoni-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.testimoni-author {
+  font-weight: bold;
+  color: #444;
+}
+
+.testimoni-button {
+  margin-top: 2rem;
+}
+
+.testimoni-button .btn {
+  font-size: 1.05rem;
+  padding: 0.9rem 2rem;
+}
+
+/* ===== Modal for Adding Testimoni ===== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Rating stars styling */
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.rating .star {
+  font-size: 1.5rem;
+  color: #ccc; /* default color */
+  cursor: pointer;
+}
+
+.rating .star.active {
+  color: #ffcc00; /* color for active stars */
+}
+
 /* ===== FAQ ===== */
 .faq-box {
   max-width: 800px;

@@ -248,6 +248,55 @@
     </div>
     </section>
 
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="section testimoni-section fade-in">
+    <div class="container">
+        <h2 class="section-title">Testimoni Peserta</h2>
+        <p class="section-subtitle">Apa kata peserta kami tentang pengalaman belajar di NusaClub?</p>
+
+        <!-- Testimoni Cards -->
+        <div class="testimoni-cards">
+            <!-- Example Testimoni Card -->
+            <div class="testimoni-card">
+                <p class="testimoni-text">"Sangat menyenangkan belajar di sini, pelatihnya sabar dan mudah dipahami!"</p>
+                <p class="testimoni-author">- Andi Saputra</p>
+                <p class="testimoni-rating">Rating: ★★★★☆</p> <!-- Display rating as stars -->
+            </div>
+        </div>
+
+        <!-- Button to Add Testimonial -->
+        <div class="testimoni-button">
+        <button id="addTestimoniBtn" class="btn btn-filled">Tambah Testimoni</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- Testimoni Modal -->
+    <div id="testimoniModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <h2>Tambahkan Testimoni</h2>
+            <form id="testimoniForm">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required />
+
+                <label for="testimoniText">Testimoni:</label>
+                <textarea id="testimoniText" rows="4" required></textarea>
+
+                <label for="rating">Rating:</label>
+                <div id="rating" class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+
+                <button type="submit">Kirim Testimoni</button>
+            </form>
+        </div>
+    </div>
+
     <!-- FAQ Section -->
     <section id="faq" class="section faq fade-in">
     <div class="container">
