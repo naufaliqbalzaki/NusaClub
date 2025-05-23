@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Pendaftaran Online - NusaClub</title>
+  <link rel="icon" href="assets/images/icons/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+
+  <section class="form-section fade-in">
+    <div class="container">
+      <h2 class="section-title">Form Pendaftaran Online</h2>
+      <p class="section-subtitle">Silakan isi formulir berikut untuk mendaftar les renang</p>
+
+      <form action="#" method="POST" class="daftar-form">
+        <label>
+          Nama Lengkap
+          <input type="text" name="nama" required />
+        </label>
+
+        <label>
+          Nomor WhatsApp
+          <input type="tel" name="whatsapp" required />
+        </label>
+
+        <label>
+          Usia
+          <input type="number" name="usia" min="4" required />
+        </label>
+
+        <label>
+          Pilihan Program
+          <select name="program" required>
+            <option value="">-- Pilih Program --</option>
+            <option value="beginner">Dasar Renang</option>
+            <option value="intermediate">Teknik Menengah</option>
+            <option value="advanced">Kompetisi</option>
+          </select>
+        </label>
+
+        <label>
+          Lokasi Belajar
+          <input type="text" name="lokasi" placeholder="Misal: Gresik Kota Baru" required />
+        </label>
+
+        <label>
+          Catatan Tambahan
+          <textarea name="catatan" rows="3" placeholder="Opsional"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-filled">Kirim Pendaftaran</button>
+        <a href="index.html" class="btn btn-outline" style="margin-top: 1rem;">← Kembali ke Beranda</a>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
