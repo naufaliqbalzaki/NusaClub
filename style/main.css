@@ -1098,138 +1098,138 @@ img {
     padding: 0 1rem;
   }
 
-/* Footer (Final Structure) */
-.footer-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 2.5rem;
-  padding: 2rem 1.5rem;
-  max-width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+  /* Footer (Final Structure) */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 
-.footer-col {
-  width: 100%;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
+  .footer-col {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
 
-/* Rata tengah brand dan konten lainnya */
-.footer-brand {
-  text-align: center;
-}
+  /* Rata tengah brand dan konten lainnya */
+  .footer-brand {
+    text-align: center;
+  }
 
-.footer-logo {
-  max-width: 80px;
-  height: auto;
-  margin: 0 auto 1rem;
-  display: block;
-}
+  .footer-logo {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+  }
 
-.footer-brand h3 {
-  font-size: 1.4rem;
-  color: white;
-  margin-bottom: 0.5rem;
-  text-align: center; /* pastikan h3 juga rata tengah */
-}
+  .footer-brand h3 {
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-align: center; /* pastikan h3 juga rata tengah */
+  }
 
-.footer-brand p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #ccc;
-  margin: 0 auto;
-  max-width: 480px;
-  text-align: center;
-}
+  .footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 auto;
+    max-width: 480px;
+    text-align: center;
+  }
 
-/* Heading Section */
-.footer-links h4,
-.footer-contact h4 {
-  font-size: 1.05rem;
-  color: var(--yellow);
-  margin-bottom: 0.8rem;
-  text-align: center; /* fix untuk pastikan <h4> rata tengah */
-}
+  /* Heading Section */
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 1.05rem;
+    color: var(--yellow);
+    margin-bottom: 0.8rem;
+    text-align: center; /* fix untuk pastikan <h4> rata tengah */
+  }
 
-/* UL container */
-.footer-links ul,
-.footer-contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-}
+  /* UL container */
+  .footer-links ul,
+  .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
 
-/* Items */
-.footer-links li,
-.footer-contact li {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
-  color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  line-height: 1.6;
-  text-align: center;
-}
+  /* Items */
+  .footer-links li,
+  .footer-contact li {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    line-height: 1.6;
+    text-align: center;
+  }
 
-/* Alamat baris terakhir block */
-.footer-contact li:last-child {
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-}
+  /* Alamat baris terakhir block */
+  .footer-contact li:last-child {
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
 
-/* Anchor */
-.footer-links a,
-.footer-contact a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+  /* Anchor */
+  .footer-links a,
+  .footer-contact a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: white;
-}
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: white;
+  }
 
-/* Icon di kontak */
-.footer-contact i {
-  color: var(--accent);
-  font-size: 1rem;
-  margin-right: 0.3rem;
-}
+  /* Icon di kontak */
+  .footer-contact i {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
 
-/* Social Media */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.2rem;
-}
+  /* Social Media */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+  }
 
-.social-icons a {
-  width: 38px;
-  height: 38px;
-  font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+  .social-icons a {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-.social-icons a:hover {
-  background-color: var(--accent);
-  color: var(--dark);
-}
+  .social-icons a:hover {
+    background-color: var(--accent);
+    color: var(--dark);
+  }
 
   /* Responsive Footer Logo */
   .footer-logo {
