@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeInAnimation();
   initCounterAnimation();
   initMobileNavToggle();
+  initGallerySlider(); // Tambahkan fungsi untuk slider galeri
 });
 
 /* === 1. Toggle FAQ (Accordion Style) === */
@@ -102,4 +103,25 @@ function initMobileNavToggle() {
       toggle.classList.remove('open');
     }
   });
+}
+
+/* === 5. Galeri Foto Geser Kiri dan Kanan === */
+let currentIndex = 0;
+
+function initGallerySlider() {
+  const leftButton = document.querySelector('.left-btn');
+  const rightButton = document.querySelector('.right-btn');
+  const slides = document.querySelectorAll('.galeri-card');
+  const totalSlides = slides.length;
+
+  leftButton?.addEventListener('click', () => moveSlide(-1, slides, totalSlides));
+  rightButton?.addEventListener('click', () => moveSlide(1, slides, totalSlides));
+}
+
+function moveSlide(direction, slides, totalSlides) {
+  const galeriGrid = document.querySelector('.galeri-grid');
+  currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+  const newTransformValue = -currentIndex * 270; // 250px for each card plus gap
+  galeriGrid.style.transform = `translateX(${newTransformValue}px)`;
 }
